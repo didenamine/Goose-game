@@ -1,14 +1,15 @@
-'''Le jeu est réalisé par Diden Amine et Malek Abdelkahlek :
-#Tout d'abord, le jeu ne contient que deux joueurs 
-(nous pourrions faire plus mais nous n'avions pas assez de temps et de connaissances)
-#Le tableau du jeu est fait à partir d'un mtrice avec 64 lignes et 2 colonnes qui sont x et y
-#Il y a une fenêtre principale qui contient la saisie des deux noms de joueurs et le bouton de démarrage
-#La deuxième fenêtre est l'endroit où les joueurs peuvent lancer des dés et déplacer leurs pions
+'''
+#Tout d'abord, le jeu ne contient que deux joueurs
+(je pourrais faire plus mais je n'avais pas assez de temps et de connaissances comme mon premier projet)
+#Le plateau de jeu est composé d'une matrice de 64 lignes et 2 colonnes qui sont x et y
+# Il y a une fenêtre principale qui contient l'entrée des deux noms de joueurs et le bouton de démarrage
+#La deuxième fenêtre est l'endroit où les joueurs peuvent lancer les dés et déplacer leurs pions
 //Les conditions//
-1-Si le joueur tombe sur le case de l'autre joueur, il retourne à son ancien case
-2-si le joueur tombe sur la case 31 il retourne sur la case 20
-3-si le joueur tombe sur la case 42 il retourne sur la case 30
-4-si le joueur tombe sur la case 63 il gagne'''
+1-Si le joueur tombe sur la case de l'autre joueur, il retourne sur son ancienne case
+2-si le joueur atterrit sur la case 31, il retourne sur la case 20
+3-si le joueur atterrit sur la case 42, il retourne sur la case 30
+4-si le joueur atterrit sur la case 63 il gagne
+'''
 from time import sleep
 from tkinter import *
 import random
