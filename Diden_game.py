@@ -1,5 +1,6 @@
 '''
 #Tout d'abord, le jeu ne contient que deux joueurs
+#Les sous-titres de jeu en anglais
 (je pourrais faire plus mais je n'avais pas assez de temps et de connaissances comme mon premier projet)
 #Le plateau de jeu est composé d'une matrice de 64 lignes et 2 colonnes qui sont x et y
 # Il y a une fenêtre principale qui contient l'entrée des deux noms de joueurs et le bouton de démarrage
@@ -13,6 +14,7 @@
 from time import sleep
 from tkinter import *
 import random
+
 #counters in case if the player step on the case 19
 blocking_counter1=0
 blocking_counter2=0
@@ -109,7 +111,7 @@ def start_game():
          player1_counter=20
          player_1_amount.config(text="amount :"+str(player1_counter))   
          players_news.config(text="Le Puits :"+Entry_name_player1.get()+ " back to 20!")
-     #case of 42 return to 30
+     #case of 42 Return to 30
      if player1_counter==42 :
           for i in range(42,30,-1) :
            pion1.place(x=lst[i][0],y=lst[i][1])
@@ -124,7 +126,9 @@ def start_game():
           pion1.place(x=lst[i][0],y=lst[i][0])
           sleep(0.1)
           new_game_window.update()
+         player_1_amount.config(text="amount :"+'63')
          players_news.config(text=Entry_name_player1.get()+' Won!!!')
+         pion1.place(x=600,y=15)
      #case of getting more than 63
      if player1_counter>63 :
          for i in range(old_place,63) :
@@ -195,7 +199,7 @@ def start_game():
       player2_counter=20
       player_2_amount.config(text="amount :"+str(player2_counter))   
       players_news.config(text="Le Puits "+Entry_name_player2.get()+" back to 20!")
-     #case of 42 return to 30
+     #case of 42 Return to 30
      if player2_counter==42 :
           for i in range(42,30,-1) :
             pion2.place(x=lst[i][0],y=lst[i][1])
@@ -210,7 +214,10 @@ def start_game():
              pion2.place(x=lst[i][0],y=lst[i][1])
              sleep(0.1)
              new_game_window.update()
+         player_2_amount.config(text="amount :"+'63')
          players_news.config(text=Entry_name_player2.get()+' Won!!')
+         pion2.place(x=600,y=15)
+         
     #case of getting more than 63
      if player2_counter>63 :
          for i in range(old_palce2,63) :
@@ -245,11 +252,12 @@ def start_game():
    matrix_place.place(x=250,y=130)
    players_news=Label(new_game_window,width=40,height=2,text="",bg='black',fg='red',font="arial")
    players_news.place(x=220,y=15)
+   
    #player 1 dice :
    player_1_name_label=Label(new_game_window,text=Entry_name_player1.get(),
    width=10,height=2,fg='red',font='arial')
    player_1_name_label.place(x=90,y=120)
-   player_1_playing_dice1=Button(new_game_window,bg='green',command=dice1,text='dice !',width=10,height=2,font='arial')
+   player_1_playing_dice1=Button(new_game_window,command=dice1,bg='green',text='dice !',width=10,height=2,font='arial')
    player_1_playing_dice1.place(x=90,y=180)
    player_1_pos=Label(new_game_window,text='',width=8,height=1,font='arail',bg='cyan')
    player_1_pos.place(x=90,y=250)
@@ -261,7 +269,7 @@ def start_game():
    player_2_name_label=Label(new_game_window,text=Entry_name_player2.get(),
    width=10,height=2,fg='red',font='arial')
    player_2_name_label.place(x=680,y=120)
-   player_2_playing_dice1=Button(new_game_window,bg='red',state=DISABLED,command=dice2,text='dice !',width=10,height=2,font='arial')
+   player_2_playing_dice1=Button(new_game_window,command=dice2,bg='red',state=DISABLED,text='dice !',width=10,height=2,font='arial')
    player_2_playing_dice1.place(x=680,y=180)
    player_2_pos=Label(new_game_window,text='',width=8,height=1,font='arail',bg='cyan')
    player_2_pos.place(x=680,y=250)
@@ -269,6 +277,7 @@ def start_game():
    player_2_amount.place(x=680,y=300)
    pion2=Label(new_game_window,image=Pion2,width=45,height=45)
    pion2.place(x=lst[0][0],y=lst[0][1])
+   
 #reset game button
    rest_game=Button(new_game_window,command=rest_counters,text="rest game",width=10,height=2,bg='red',font='arial')
    rest_game.place(x=0,y=0)
